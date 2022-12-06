@@ -1,0 +1,22 @@
+name: Daily post
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '30 7 * * *'
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    secrets:
+      MASTO_ACCESS_TOKEN: ${{ secrets.MASTO_ACCESS_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.19.x'
+      - name: Install dependencies
+        run: go get .
+      - name: post to mastodon
+        run: go run main.go
+      
