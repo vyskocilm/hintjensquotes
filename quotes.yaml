@@ -1,0 +1,238 @@
+quotes:
+  -
+    link: "http://hintjens.com/blog:17"
+    title: "Testing Considered Evil"
+    quotes:
+      - It is impossible to know what software we need to make before we start making it.
+      - When you think you know what the problem is, you are still wrong.
+      - Only a diverse crowd with conflicting perspectives can really identify the problem.
+      - If you don't have that crowd of people fully engaged in every stage of your software development process, it will go wrong in unpleasant ways.
+      - Releasing buggy immature (open source) software is an essential part of building a community.
+
+  -
+    link: "http://hintjens.com/blog:19"
+    title: How to Design Perfect (Software) Products 
+    quotes:
+      - |
+        Ideas are cheap. No exceptions. There are no brilliant ideas. Anyone
+        who tries to start a discussion with '"oooh, we can do this too!"' should
+        be beaten down with all the passion one reserves for traveling
+        musicians. It is like sitting in a cafe at the foot of a mountain,
+        drinking a hot chocolate and telling others, '"hey, I have a great idea,
+        we can climb that mountain! And build a chalet on top! With two saunas!
+        And a garden! Hey, and we can make it solar powered! Dude, that is
+        awesome! What color should we paint it? Green! No, blue! OK, go and
+        make it, I will stay here and make spreadsheets and graphics!"'
+      - |
+        The starting point for a good design process is to collect problems
+        that confront people. The second step is to evaluate these problems
+        with the basic question, '"how much is it worth to solve this problem?"'
+        Having done that, we can collect a set of problems that are worth
+        solving.
+      - |
+        Good solutions to real problems will succeed as products. Their success
+        will depend on how good and cheap the solution is, and how important
+        the problem is. But their success will also depend on how much they
+        demand in effort to use, in other words how simple they are.
+      - |
+        Making stuff that you don't immediately have a need for is pointless.
+        Doesn't matter how talented or brilliant you are, if you just sit down and
+        make stuff, you are most likely wasting your time.
+      - |
+        Problems are not equal. Some are simple, and some are complex. Ironically,
+        solving the simpler problems often has more value to more people than
+        solving the really hard ones. So if you allow engineers to just work on
+        random things, they'll most focus on the most interesting but least
+        worthwhile things.
+      - |
+        Engineers and designers love to make stuff and decoration, and this
+        inevitably leads to complexity. It is crucial to have a '"stop mechanism"', a
+        way to set short, hard deadlines that force people to make smaller, simpler
+        answers to just the most crucial problems.
+  -
+    link: "http://hintjens.com/blog:22"
+    title: "The Lazy Perfectionist and other Patterns "
+    quotes:
+      - |
+        The Lazy Perfectionist
+
+        Never design anything that's not a precise minimal answer to a problem
+        we can identify and have to solve. (Pieter Hintjens)
+      - |
+        The Benevolent Tyrant
+
+        The control of a large force is the same principle as the control of a
+        few men: it is merely a question of dividing up their numbers. (Sun Tzu)
+      - |
+        The Earth and Sky</span>
+
+        The ideal team consists of two sides: one writing code, and one providing feedback. (Pieter Hintjens)
+      - |
+        The Happy Failure
+
+        To succeed you must learn to fail rapidly, cheaply, and often. (Pieter Hintjens)
+      - |
+        The Open Door
+
+        The accuracy of knowledge comes from diversity. (Pieter Hintjens)
+      - |
+        The Laughing Clown
+
+        Perfection precludes participation (Pieter Hintjens)
+      - |
+        The Mindful General
+
+        Make no plans. Set goals, develop strategies and tactics. (Pieter Hintjens)
+      - |
+        The Social Engineer
+        
+        If you know the enemy and know yourself, you need not fear the result of a hundred battles. (Sun Tzu)
+      - |
+        The Constant Gardener
+
+        Do not repeat the tactics which gained you one victory, but let your methods be regulated by the infinite variety of circumstances. (Sun Tzu)
+      - |
+        The Rolling Stone
+
+        After crossing a river, you should get far away from it. (Sun Tzu)
+      - |
+        The Pirate Gang
+
+        Code, like all knowledge, works best as collective — not private — property. (Pieter Hintjens)
+
+      - |
+        The Flash Mob
+
+        Water shapes its course according to the nature of the ground over which it flows. (Sun Tzu)
+      - |
+        The Canary Watcher
+
+        Pain is not, generally, a Good Sign. (Pieter Hintjens)
+      - |
+        The Hangman
+
+        Never interrupt others when they are making mistakes. (Pieter Hintjens)
+      - |
+        The Historian
+
+        The public record may be tedious, but it's the only way to prevent collusion. (Pieter Hintjens)
+      - |
+        The Provocateur
+
+        When a man knows he is to be hanged in a fortnight, it concentrates his mind wonderfully. (Samuel Johnson)
+      - |
+        The Mystic
+
+        When people argue or complain, just write them a Sun Tzu quotation. (Mikko Koppanen)
+
+  -
+    title: My 4-year old is a better programmer than you
+    link: "http://hintjens.com/blog:80"
+    quotes:
+      - |
+        Now, my claim, and I've argued this in many articles and texts, is that
+        the more we approach the model where anyone can play, the better the code
+        we make. Quality means one thing: accuracy. And accuracy correlates to the size
+        and diversity of the crowd who are playing, and their freedom to organize.
+
+  -
+    title: C4.1 - an Exothermic Process 
+    link: http://hintjens.com/blog:93
+    quotes:
+      - |
+        What is most fun is that ZeroMQ takes zero management these days. It is
+        self-steering, self-feeding, and self-organizing. We have applied C4.1
+        http://rfc.zeromq.org/spec:22 to old projects like libzmq, and brand
+        new ones. The results are the same. If the project does something
+        useful, it takes off, and contributors join, and everyone enjoys
+        themselves.
+      - |
+        C4.1 is an exothermic process. It produces almost perfect software.
+        ZeroMQ's oddities all date from before 2012, and are slowly
+        disappearing. ZeroMQ master is almost always stable. It just does not
+        break stable APIs or protocols. The mailing list is polite and happy.
+        We do not argue.
+
+        If you run an open source project, and your commit chart does not look like this,
+        go read http://rfc.zeromq.org/spec:22.
+
+  -
+    title: Ten Rules for Good API Design 
+    link: http://hintjens.com/blog:94
+    quotes:
+      - |
+        Make Only What You Need Today
+
+        This is the top rule. Only solve problems you must solve, and make
+        minimal answers to them. The temptation to solve tomorrow's problems is
+        huge. Resist! Instead of trying to ship code in advance, focus on
+        reducing your shipping cycles. If it takes you a few hours to ship
+        answers to new questions, you can stop guessing what tomorrow's
+        questions will be.
+      - |
+        Make the API modular
+
+        Divide large problems into smaller ones, and solve each one separately. A
+        modular API is easier to learn, and change over time. You can deprecate old
+        modules with new ones. You can teach modules one by one. You can separate
+        experimental pieces of the API from stable ones, from legacy pieces.
+      - |
+        Use Structured Syntax
+
+        Use a structured syntax for the API: thing.action or thing.property
+        instead of do_action_with_thing. The syntax naturally fits a modular
+        approach, where each module is a class of things.
+      - |
+        Use Natural Semantics
+
+        Invent no new concepts. Use only concepts the developer will already
+        know, as the basis for your class system. If you find yourself having
+        to explain a concept, you are doing it wrong. Either you're solving
+        future problems, or you're structuring the API wrongly.
+
+      - |
+        Make the API Self-consistent
+
+        Be rigorous in using the same style and conventions in every class.
+        Consistency means when someone learns one class, they've learned them
+        all. Document your conventions and make them a required standard for
+        contributors.
+
+      - |
+        Make the API Extensible
+
+        Easy extensibility has many benefits, not least it welcomes contributors. It
+        also lets you delay implementing features, with '"it iss easy to add later if we
+        need it."' Every feature you do not add today is a win.
+
+      - |
+        Make it Fully Testable
+
+        Every class and method must be fully testable by hostile code. Write your tests
+        as you write code, and use the tests as documentation of the contracts that the
+        API provides to the outside world. Run these tests every time the code changes.
+        Do not worry about code coverage. What matters is the external contract.
+        Consider using contract lifecycles http://hintjens.com/blog:85.
+
+      - |
+        Grow by Layering
+
+        Keep your APIs focused and grow them over time by layering new APIs on top.
+        Extensibility does not mean indefinite growth. Be explicit about the scope of
+
+      - |
+        Keep it Simple to Use
+
+        The ultimate test is how simple the API is to use. When you write an example,
+        could your code look simpler? Are you forcing the user to specify options they
+        don't care about? Are they taking extra steps that add no value? Be obsessive
+        about reducing the visible surface area of your API.
+
+      - |
+        Keep it Portable
+
+        Do not allow system concepts to leak into the API. Abstract them cleanly, with
+        the intention: this API could run on any operating system. Your API must hide
+        the implementation, though be careful about rule #4, and use natural
+        abstractions.
+
