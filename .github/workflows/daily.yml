@@ -1,8 +1,16 @@
 name: Daily post
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
+    # run daily at 7:30 UTC
     - cron:  '30 7 * * *'
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
 jobs:
   post:
     runs-on: ubuntu-latest
