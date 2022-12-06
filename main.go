@@ -113,7 +113,7 @@ func main() {
 
 	// post on mastodon
 	c := mastodon.NewClient(&mastodon.Config{
-		Server:      "http://localhost:80/",
+		Server:      "https://botsin.space/",
 		AccessToken: token,
 	})
 

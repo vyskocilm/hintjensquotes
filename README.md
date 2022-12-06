@@ -2,6 +2,10 @@
 
 [Pieter Hintjens](http://hintjens.com) edition.
 
+```html
+<a rel="me" href="https://botsin.space/@hintjensquotes">Mastodon</a>
+```
+
 ## Run
 
 Run daily through Github actions
