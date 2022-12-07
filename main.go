@@ -2,13 +2,12 @@ package main
 
 import (
 	"context"
+	"crypto/rand"
 	"flag"
 	"fmt"
 	"log"
-	"math/rand"
+	"math/big"
 	"os"
-	"strings"
-	"time"
 
 	_ "embed"
 
@@ -19,10 +18,6 @@ import (
 //go:embed quotes.yaml
 var quotesSrc []byte
 
-func init() {
-	rand.Seed(time.Now().Unix())
-}
-
 type Article struct {
 	Link   string   `yaml:"link"`
 	Title  string   `yaml:"title"`
@@ -31,6 +26,46 @@ type Article struct {
 
 type Articles struct {
 	articles []Article
+}
+
+func (a Articles) Articles() int {
+	return len(a.articles)
+}
+
+func (a Articles) Quotes() int {
+	acc := 0
+	for _, article := range a.articles {
+		acc += len(article.Quotes)
+	}
+	return acc
+}
+
+// StatusAt panics for wrong index
+func (a Articles) StatusAt(idx int) Status {
+	if idx < 0 {
+		log.Fatalf("Articles.StatusAt: negative idx %d", idx)
+	}
+	acc := 0
+	for _, article := range a.articles {
+		for _, quote := range article.Quotes {
+			if acc == idx {
+				return Status{
+					Title: article.Title,
+					Link:  article.Link,
+					Quote: quote,
+				}
+			}
+			acc++
+		}
+	}
+	log.Fatalf("Articles.StatusAt: too big idx %d requested, maximum %d", idx, a.Quotes()-1)
+	panic("x")
+}
+
+func (a Articles) Random() Status {
+	idx := mustRandInt(a.Quotes())
+
+	return a.StatusAt(idx)
 }
 
 type Status struct {
@@ -77,17 +112,6 @@ func UnmarshalQuotes(b []byte) (Articles, error) {
 	}, nil
 }
 
-func (a Articles) Random() Status {
-	aidx := rand.Intn(len(a.articles))
-	qidx := rand.Intn(len(a.articles[aidx].Quotes))
-
-	return Status{
-		Link:  a.articles[aidx].Link,
-		Title: a.articles[aidx].Title,
-		Quote: strings.TrimSpace(a.articles[aidx].Quotes[qidx]),
-	}
-}
-
 func main() {
 	ctx := context.Background()
 	token := os.Getenv("MASTO_ACCESS_TOKEN")
@@ -95,6 +119,8 @@ func main() {
 
 	var check bool
 	flag.BoolVar(&check, "check", false, "check the quotes.yaml for a validity and stop")
+	var prnt bool
+	flag.BoolVar(&prnt, "print", false, "print to stdout and exit")
 	flag.Parse()
 
 	as, err := UnmarshalQuotes(quotesSrc)
@@ -103,12 +129,12 @@ func main() {
 	}
 
 	if check {
-		asLen := len(as.articles)
-		quotesLen := 0
-		for _, article := range as.articles {
-			quotesLen += len(article.Quotes)
-		}
-		log.Printf("I: quotes.yaml is valid. Contains %d articles with %d quotes in total.", asLen, quotesLen)
+		log.Printf("I: quotes.yaml is valid. Contains %d articles with %d quotes in total.", as.Articles(), as.Quotes())
+		return
+	}
+
+	if prnt {
+		fmt.Print(as.Random().Toot())
 		return
 	}
 
@@ -133,4 +159,12 @@ func main() {
 		log.Fatalf("c.PostStatus: %s", err)
 	}
 	fmt.Printf("%#v\n", status)
+}
+
+func mustRandInt(max int) int {
+	x, err := rand.Int(rand.Reader, big.NewInt(int64(max)))
+	if err != nil {
+		log.Fatalf("crypto/rand: %s", err)
+	}
+	return int(x.Int64())
 }
