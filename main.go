@@ -103,7 +103,12 @@ func main() {
 	}
 
 	if check {
-		log.Printf("I: quotes.yaml is valid")
+		asLen := len(as.articles)
+		quotesLen := 0
+		for _, article := range as.articles {
+			quotesLen += len(article.Quotes)
+		}
+		log.Printf("I: quotes.yaml is valid. Contains %d articles with %d quotes in total.", asLen, quotesLen)
 		return
 	}
 
